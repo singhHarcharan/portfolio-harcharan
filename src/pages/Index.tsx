@@ -10,7 +10,10 @@ import {
   Code2,
   Briefcase,
   Award,
-  Zap
+  Zap,
+  BookOpen,
+  Calendar,
+  ArrowRight
 } from "lucide-react";
 
 const Index = () => {
@@ -38,6 +41,9 @@ const Index = () => {
               <button onClick={() => scrollToSection('projects')} className="text-muted-foreground hover:text-foreground transition-colors">
                 Projects
               </button>
+              <button onClick={() => scrollToSection('blogs')} className="text-muted-foreground hover:text-foreground transition-colors">
+                Blogs
+              </button>
               <button onClick={() => scrollToSection('contact')} className="text-muted-foreground hover:text-foreground transition-colors">
                 Contact
               </button>
@@ -47,26 +53,29 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="hero" className="min-h-screen flex items-center pt-20">
-        <div className="container mx-auto px-6">
+      <section id="hero" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-soft opacity-50" />
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in-up">
             <div className="space-y-4">
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tighter">
-                Harcharanpreet Singh
-              </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground tracking-tight">
+              <div className="inline-block">
+                <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-gradient">
+                  Harcharanpreet Singh
+                </h1>
+              </div>
+              <p className="text-xl md:text-2xl text-foreground/80 tracking-tight">
                 Software Engineer — Backend • AI Integrations • Full-Stack Execution
               </p>
             </div>
             
-            <p className="text-lg md:text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               I build reliable, scalable engineering solutions and thrive in fast-moving teams where ownership matters.
             </p>
 
             <div className="flex gap-4 justify-center pt-4">
               <Button 
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow hover:shadow-glow-lg transition-all"
                 onClick={() => window.open('#', '_blank')}
               >
                 View Resume
@@ -74,7 +83,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-border hover:bg-muted"
+                className="border-border hover:bg-muted/50"
                 onClick={() => scrollToSection('projects')}
               >
                 See My Work
@@ -118,7 +127,7 @@ const Index = () => {
 
             <div className="space-y-12">
               {/* Amdocs */}
-              <Card className="p-8 border-border hover:border-accent/50 transition-all duration-300 hover:shadow-glow">
+              <Card className="p-8 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow bg-card">
                 <div className="space-y-4">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
                     <div>
@@ -163,7 +172,7 @@ const Index = () => {
               </Card>
 
               {/* Upaav */}
-              <Card className="p-8 border-border hover:border-accent/50 transition-all duration-300 hover:shadow-glow">
+              <Card className="p-8 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow bg-card">
                 <div className="space-y-4">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
                     <div>
@@ -216,7 +225,7 @@ const Index = () => {
 
             <div className="grid md:grid-cols-2 gap-6">
               {/* PayPocket */}
-              <Card className="p-6 border-border hover:border-accent/50 transition-all duration-300 hover:shadow-glow group">
+              <Card className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card">
                 <div className="space-y-4">
                   <div className="flex items-start justify-between">
                     <h3 className="text-xl font-semibold tracking-tight group-hover:text-gradient transition-all">
@@ -252,7 +261,7 @@ const Index = () => {
               </Card>
 
               {/* Movie Arena */}
-              <Card className="p-6 border-border hover:border-accent/50 transition-all duration-300 hover:shadow-glow group">
+              <Card className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card">
                 <div className="space-y-4">
                   <div className="flex items-start justify-between">
                     <h3 className="text-xl font-semibold tracking-tight group-hover:text-gradient transition-all">
@@ -286,7 +295,7 @@ const Index = () => {
               </Card>
 
               {/* Rain Vine */}
-              <Card className="p-6 border-border hover:border-accent/50 transition-all duration-300 hover:shadow-glow group md:col-span-2">
+              <Card className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group md:col-span-2 bg-card">
                 <div className="space-y-4">
                   <div className="flex items-start justify-between">
                     <h3 className="text-xl font-semibold tracking-tight group-hover:text-gradient transition-all">
@@ -313,6 +322,113 @@ const Index = () => {
                       <ExternalLink className="w-4 h-4" />
                       Live
                     </Button>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Blogs Section */}
+      <section id="blogs" className="py-24 border-t border-border relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-soft opacity-30" />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center gap-3 mb-12">
+              <BookOpen className="w-5 h-5 text-accent" />
+              <h2 className="text-3xl font-bold tracking-tight">Tech Blogs</h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Blog Post 1 */}
+              <Card className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card cursor-pointer">
+                <div className="space-y-4">
+                  <div className="flex items-start justify-between">
+                    <Badge variant="secondary" className="mb-2">AI & LLMs</Badge>
+                    <Calendar className="w-4 h-4 text-muted-foreground" />
+                  </div>
+                  
+                  <h3 className="text-xl font-semibold tracking-tight group-hover:text-gradient transition-all">
+                    Building Production-Ready RAG Systems
+                  </h3>
+                  
+                  <p className="text-muted-foreground line-clamp-3">
+                    A deep dive into implementing retrieval-augmented generation systems at scale, covering vector databases, embedding strategies, and real-world challenges.
+                  </p>
+
+                  <div className="flex items-center justify-between pt-2">
+                    <span className="text-sm text-muted-foreground">5 min read</span>
+                    <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all" />
+                  </div>
+                </div>
+              </Card>
+
+              {/* Blog Post 2 */}
+              <Card className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card cursor-pointer">
+                <div className="space-y-4">
+                  <div className="flex items-start justify-between">
+                    <Badge variant="secondary" className="mb-2">Backend</Badge>
+                    <Calendar className="w-4 h-4 text-muted-foreground" />
+                  </div>
+                  
+                  <h3 className="text-xl font-semibold tracking-tight group-hover:text-gradient transition-all">
+                    Microservices Architecture Best Practices
+                  </h3>
+                  
+                  <p className="text-muted-foreground line-clamp-3">
+                    Lessons learned from building and scaling microservices in production, including service communication, data consistency, and monitoring strategies.
+                  </p>
+
+                  <div className="flex items-center justify-between pt-2">
+                    <span className="text-sm text-muted-foreground">8 min read</span>
+                    <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all" />
+                  </div>
+                </div>
+              </Card>
+
+              {/* Blog Post 3 */}
+              <Card className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card cursor-pointer">
+                <div className="space-y-4">
+                  <div className="flex items-start justify-between">
+                    <Badge variant="secondary" className="mb-2">DevOps</Badge>
+                    <Calendar className="w-4 h-4 text-muted-foreground" />
+                  </div>
+                  
+                  <h3 className="text-xl font-semibold tracking-tight group-hover:text-gradient transition-all">
+                    Docker & Kubernetes in Practice
+                  </h3>
+                  
+                  <p className="text-muted-foreground line-clamp-3">
+                    A practical guide to containerization and orchestration, from local development to production deployment with real-world examples.
+                  </p>
+
+                  <div className="flex items-center justify-between pt-2">
+                    <span className="text-sm text-muted-foreground">6 min read</span>
+                    <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all" />
+                  </div>
+                </div>
+              </Card>
+
+              {/* Blog Post 4 */}
+              <Card className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card cursor-pointer">
+                <div className="space-y-4">
+                  <div className="flex items-start justify-between">
+                    <Badge variant="secondary" className="mb-2">Full-Stack</Badge>
+                    <Calendar className="w-4 h-4 text-muted-foreground" />
+                  </div>
+                  
+                  <h3 className="text-xl font-semibold tracking-tight group-hover:text-gradient transition-all">
+                    React Performance Optimization
+                  </h3>
+                  
+                  <p className="text-muted-foreground line-clamp-3">
+                    Advanced techniques for optimizing React applications, including memoization, lazy loading, code splitting, and rendering optimization strategies.
+                  </p>
+
+                  <div className="flex items-center justify-between pt-2">
+                    <span className="text-sm text-muted-foreground">7 min read</span>
+                    <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all" />
                   </div>
                 </div>
               </Card>
@@ -417,7 +533,7 @@ const Index = () => {
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
-              <Card className="p-6 border-border bg-muted/50">
+              <Card className="p-6 border-border bg-gradient-soft/50 hover:shadow-glow transition-all">
                 <div className="space-y-2">
                   <h3 className="text-4xl font-bold text-gradient">1100+</h3>
                   <p className="text-muted-foreground">LeetCode Problems Solved</p>
@@ -425,7 +541,7 @@ const Index = () => {
                 </div>
               </Card>
 
-              <Card className="p-6 border-border bg-muted/50">
+              <Card className="p-6 border-border bg-gradient-soft/50 hover:shadow-glow transition-all">
                 <div className="space-y-2">
                   <h3 className="text-4xl font-bold text-gradient">Rank 1855</h3>
                   <p className="text-muted-foreground">Global Rank</p>
