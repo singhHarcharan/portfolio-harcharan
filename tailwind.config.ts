@@ -51,6 +51,8 @@ export default {
           start: "hsl(var(--gradient-start))",
           mid: "hsl(var(--gradient-mid))",
           end: "hsl(var(--gradient-end))",
+          soft: "hsl(var(--gradient-soft))",
+          softEnd: "hsl(var(--gradient-soft-end))",
         },
       },
       fontFamily: {
