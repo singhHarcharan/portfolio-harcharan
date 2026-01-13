@@ -76,18 +76,18 @@ const Index = () => {
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow hover:shadow-glow-lg transition-all"
-                onClick={() => window.open('#', '_blank')}
+                onClick={() => window.open('https://drive.google.com/file/d/1NN_YltmekSxLiP-WaCiabYQ0zi0UC6NK/view', '_blank', 'noopener,noreferrer')}
               >
                 View Resume
               </Button>
-              <Button 
+              {/* <Button 
                 size="lg" 
                 variant="outline"
                 className="border-border hover:bg-muted/50"
                 onClick={() => scrollToSection('projects')}
               >
                 See My Work
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>
@@ -140,27 +140,32 @@ const Index = () => {
                   <ul className="space-y-2 text-muted-foreground">
                     <li className="flex gap-2">
                       <span className="text-accent mt-1.5">•</span>
-                      <span>Developed <strong className="text-foreground">TechMate AI</strong>, an internal AI automation system for Microsoft Teams using LangChain, RAG, AutoX LLM, ChromaDB</span>
+                      <span>Independently developed <strong className="text-foreground">TechMate AI</strong>, an internal AI-powered automation system for Microsoft Teams using LangChain, ChromaDB (RAG) & AutoX LLM, reducing repetitive queries & cutting IT response time by 30%.</span>
                     </li>
                     <li className="flex gap-2">
                       <span className="text-accent mt-1.5">•</span>
-                      <span>Built SharePoint document loaders for enterprise RAG systems</span>
+                      <span>Integrated Power Automate Flows with Teams to enable real-time query resolution, reducing manual expert intervention by 40% and improving query turnaround time.</span>
                     </li>
                     <li className="flex gap-2">
                       <span className="text-accent mt-1.5">•</span>
-                      <span>Developed & optimized backend services using Java & REST APIs</span>
+                      <span>Built SharePointRAGLoader to process enterprise documents, enabling contextual AI responses and decreasing manual document lookup time by 50%.</span>
                     </li>
                     <li className="flex gap-2">
                       <span className="text-accent mt-1.5">•</span>
-                      <span>Integrated Power Automate workflows with Teams for real-time automation</span>
+                      <span>Maintained backend services for Telstra, a major telecom client, using Java and Spring Boot.</span>
                     </li>
                     <li className="flex gap-2">
                       <span className="text-accent mt-1.5">•</span>
-                      <span>Collaborated with multiple teams to improve microservice performance</span>
+                      <span>Modified and enhanced existing RESTful APIs, contributing to backend service improvements & system efficiency.</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-accent mt-1.5">•</span>
+                      <span>Collaborated with cross-functional teams to integrate backend solutions with frontend & third-party services.</span>
                     </li>
                   </ul>
 
                   <div className="flex flex-wrap gap-2 pt-2">
+                    <Badge variant="secondary">Python</Badge>
                     <Badge variant="secondary">LangChain</Badge>
                     <Badge variant="secondary">RAG</Badge>
                     <Badge variant="secondary">ChromaDB</Badge>
@@ -185,19 +190,23 @@ const Index = () => {
                   <ul className="space-y-2 text-muted-foreground">
                     <li className="flex gap-2">
                       <span className="text-accent mt-1.5">•</span>
-                      <span>Independently built a complete Atlassian Jira plugin (frontend + backend) from scratch</span>
+                      <span>Independently developed an <strong className="text-foreground">Atlassian Jira plugin</strong> end-to-end, reducing operational overhead costs by 20–30%</span>
                     </li>
                     <li className="flex gap-2">
                       <span className="text-accent mt-1.5">•</span>
-                      <span>Designed UI/UX, built backend logic, and implemented Jira work-logging features</span>
+                      <span>Designed and built UI with React.js for seamless task visualization and time logging workflows</span>
                     </li>
                     <li className="flex gap-2">
                       <span className="text-accent mt-1.5">•</span>
-                      <span>Utilized Forge storage & Jira authentication for secure, session-based interactions</span>
+                      <span>Developed backend using Node.js and Atlassian Forge storage, achieving 100% secure session handling by leveraging native site authentication without separate auth layer</span>
                     </li>
                     <li className="flex gap-2">
                       <span className="text-accent mt-1.5">•</span>
-                      <span>Delivered product iterations directly with the co-founder</span>
+                      <span>Implemented key features including work logging in hours/minutes, a dynamic calendar interface, and real-time ticket displays based on user activity data pulled from Jira</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-accent mt-1.5">•</span>
+                      <span>Delivered MVP in under 10 weeks, enabling stakeholder demos, early onboarding, & shaping product roadmap</span>
                     </li>
                   </ul>
 
@@ -205,7 +214,41 @@ const Index = () => {
                     <Badge variant="secondary">React.js</Badge>
                     <Badge variant="secondary">Node.js</Badge>
                     <Badge variant="secondary">Atlassian Forge</Badge>
-                    <Badge variant="secondary">Jira APIs</Badge>
+                    <Badge variant="secondary">Jira API</Badge>
+                    <Badge variant="secondary">REST APIs</Badge>
+                    <Badge variant="secondary">UI/UX Design</Badge>
+                  </div>
+                </div>
+              </Card>
+
+              {/* XcitEducation */}
+              <Card className="p-8 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow bg-card">
+                <div className="space-y-4">
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
+                    <div>
+                      <h3 className="text-2xl font-semibold tracking-tight">Subject Matter Expert</h3>
+                      <p className="text-lg text-muted-foreground">XcitEducation Worldwide</p>
+                    </div>
+                    <span className="text-sm text-muted-foreground whitespace-nowrap">Aug 2022 – Sept 2022</span>
+                  </div>
+                  
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li className="flex gap-2">
+                      <span className="text-accent mt-1.5">•</span>
+                      <span>Mentored <strong className="text-foreground">60+ B.Tech students</strong> in Data Structures & Algorithms, providing advanced C++ programming guidance</span>
+                    </li>
+                    <li className="flex gap-2">
+                      <span className="text-accent mt-1.5">•</span>
+                      <span>Resolved complex queries for <strong className="text-foreground">80+ students</strong>, leveraging strong communication and problem-solving skills to drive learning outcomes</span>
+                    </li>
+                  </ul>
+
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    <Badge variant="secondary">C++</Badge>
+                    <Badge variant="secondary">Data Structures</Badge>
+                    <Badge variant="secondary">Algorithms</Badge>
+                    <Badge variant="secondary">Mentoring</Badge>
+                    <Badge variant="secondary">Technical Training</Badge>
                   </div>
                 </div>
               </Card>
