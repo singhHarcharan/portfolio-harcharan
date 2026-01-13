@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { showComingSoon } from "@/utils/toast";
 import { 
   Github, 
   Linkedin, 
@@ -417,6 +418,7 @@ const Index = () => {
               {/* Blog Post 1 */}
               <Card 
                 className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card cursor-pointer"
+                onClick={() => showComingSoon("Blog post coming soon!")}
               >
                 <div className="space-y-4">
                   <div className="flex items-start justify-between">
@@ -442,6 +444,7 @@ const Index = () => {
               {/* Blog Post 2 */}
               <Card 
                 className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card cursor-pointer"
+                onClick={() => showComingSoon("Blog post coming soon!")}
               >
                 <div className="space-y-4">
                   <div className="flex items-start justify-between">
@@ -467,6 +470,7 @@ const Index = () => {
               {/* Blog Post 3 */}
               <Card 
                 className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card cursor-pointer"
+                onClick={() => showComingSoon("Blog post coming soon!")}
               >
                 <div className="space-y-4">
                   <div className="flex items-start justify-between">
@@ -492,6 +496,7 @@ const Index = () => {
               {/* Blog Post 4 */}
               <Card 
                 className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card cursor-pointer"
+                onClick={() => showComingSoon("Blog post coming soon!")}
               >
                 <div className="space-y-4">
                   <div className="flex items-start justify-between">
