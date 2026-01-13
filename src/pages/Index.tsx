@@ -22,7 +22,8 @@ const Index = () => {
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  return (
+
+  return ( 
     <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-sm">
@@ -76,7 +77,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow hover:shadow-glow-lg transition-all"
-                onClick={() => window.open('https://drive.google.com/file/d/1NN_YltmekSxLiP-WaCiabYQ0zi0UC6NK/view', '_blank', 'noopener,noreferrer')}
+                onClick={() => window.open('https://drive.google.com/file/d/1TkH09NauHMZHKRfaUsKYX-m-aN1ZrTai/view?usp=sharing', '_blank', 'noopener,noreferrer')}
               >
                 View Resume
               </Button>
@@ -104,12 +105,7 @@ const Index = () => {
             
             <div className="prose prose-lg max-w-none space-y-4 text-muted-foreground">
               <p className="text-lg leading-relaxed">
-                Software Engineer with experience collaborating directly with a co-founder at an early-stage startup. 
-                I bring strong expertise in backend engineering, full-stack development, automations, and AI integrations.
-              </p>
-              <p className="text-lg leading-relaxed">
-                I'm comfortable taking ownership of features end-to-end and excel in environments where execution speed 
-                and quality matter. Highly suited for small teams that need fast execution, responsibility, and creative problem-solving.
+                Software engineer with experience working in early-stage startups and enterprise environments. Strong focus on backend and full-stack development, automations, and AI integrations. Comfortable owning features end-to-end and working in fast-moving teams where clarity is built through execution.
               </p>
             </div>
           </div>
@@ -278,8 +274,11 @@ const Index = () => {
                   </div>
                   
                   <p className="text-muted-foreground">
-                    Wallet App (Paytm Clone) — Secure wallet app with authentication, money transfer, and MongoDB transaction guarantees.
+                    Digital Wallet — Full-stack wallet application with JWT-based authentication, atomic money transfers, and real-time balance updates.
                   </p>
+                  {/* <p className="text-muted-foreground">
+                    Wallet App (Paytm Clone) — Secure wallet app with authentication, money transfer, and MongoDB transaction guarantees.
+                  </p> */}
 
                   <div className="flex flex-wrap gap-2">
                     <Badge variant="secondary">React</Badge>
@@ -290,15 +289,15 @@ const Index = () => {
                     <Badge variant="secondary">JWT</Badge>
                   </div>
 
-                  <div className="flex gap-3 pt-2">
-                    <Button variant="outline" size="sm" className="gap-2" onClick={() => window.open('#', '_blank')}>
+                  <div className="flex gap-3 mt-4">
+                    <Button variant="outline" size="sm" className="gap-2" onClick={() => window.open('https://github.com/singhHarcharan/PayPocket', '_blank')}>
                       <Github className="w-4 h-4" />
                       Code
                     </Button>
-                    <Button variant="outline" size="sm" className="gap-2" onClick={() => window.open('#', '_blank')}>
+                    {/* <Button variant="outline" size="sm" className="gap-2" onClick={() => window.open('#', '_blank')}>
                       <ExternalLink className="w-4 h-4" />
                       Live
-                    </Button>
+                    </Button> */}
                   </div>
                 </div>
               </Card>
@@ -314,7 +313,7 @@ const Index = () => {
                   </div>
                   
                   <p className="text-muted-foreground">
-                    Netflix-Style App — Complete streaming UI with authentication, browsing, and payments.
+                      A modern streaming platform built with React, Redux & Firebase. Browse, search, and discover movies with an intuitive interface. Features user authentication, responsive design, and real-time updates. Deployed on Firebase.
                   </p>
 
                   <div className="flex flex-wrap gap-2">
@@ -324,21 +323,52 @@ const Index = () => {
                     <Badge variant="secondary">Stripe</Badge>
                   </div>
 
-                  <div className="flex gap-3 pt-2">
-                    <Button variant="outline" size="sm" className="gap-2" onClick={() => window.open('#', '_blank')}>
+                  <div className="flex gap-3 mt-4">
+                    <Button variant="outline" size="sm" className="gap-2" onClick={() => window.open('https://github.com/singhHarcharan/Movie-Arena', '_blank')}>
                       <Github className="w-4 h-4" />
                       Code
                     </Button>
-                    <Button variant="outline" size="sm" className="gap-2" onClick={() => window.open('#', '_blank')}>
+                    {/* <Button variant="outline" size="sm" className="gap-2" onClick={() => window.open('#', '_blank')}>
                       <ExternalLink className="w-4 h-4" />
                       Live
+                    </Button> */}
+                  </div>
+                </div>
+              </Card>
+
+              {/* TripCraft AI */}
+              <Card className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card">
+                <div className="space-y-4">
+                  <div className="flex items-start justify-between">
+                    <h3 className="text-xl font-semibold tracking-tight group-hover:text-gradient transition-all">
+                      TripCraft AI
+                    </h3>
+                    <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
+                  </div>
+                  
+                  <p className="text-muted-foreground">
+                    AI-powered travel planner using LLMs and RAG. Get personalized trip recommendations, weather-optimized scheduling, and smart itinerary generation.
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary">LLM</Badge>
+                    <Badge variant="secondary">RAG</Badge>
+                    <Badge variant="secondary">Python</Badge>
+                    <Badge variant="secondary">React</Badge>
+                    <Badge variant="secondary">OpenAI</Badge>
+                  </div>
+
+                  <div className="flex gap-3 mt-4">
+                    <Button variant="outline" size="sm" className="gap-2" onClick={() => window.open('https://github.com/singhHarcharan/TripCraft-AI.git', '_blank')}>
+                      <Github className="w-4 h-4" />
+                      Code
                     </Button>
                   </div>
                 </div>
               </Card>
 
               {/* Rain Vine */}
-              <Card className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group md:col-span-2 bg-card">
+              <Card className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card">
                 <div className="space-y-4">
                   <div className="flex items-start justify-between">
                     <h3 className="text-xl font-semibold tracking-tight group-hover:text-gradient transition-all">
@@ -348,7 +378,7 @@ const Index = () => {
                   </div>
                   
                   <p className="text-muted-foreground">
-                    Weather Dashboard — Real-time weather application with a clean, responsive UI.
+                      A sleek weather app built with React. Get real-time weather updates for any city with a clean, responsive interface. Features dynamic backgrounds that change with the temperature. Built with React and OpenWeatherMap API.
                   </p>
 
                   <div className="flex flex-wrap gap-2">
@@ -356,15 +386,15 @@ const Index = () => {
                     <Badge variant="secondary">OpenWeatherMap API</Badge>
                   </div>
 
-                  <div className="flex gap-3 pt-2">
-                    <Button variant="outline" size="sm" className="gap-2" onClick={() => window.open('#', '_blank')}>
+                  <div className="flex gap-3 mt-4">
+                    <Button variant="outline" size="sm" className="gap-2" onClick={() => window.open('https://github.com/singhHarcharan/Rain-Vine', '_blank')}>
                       <Github className="w-4 h-4" />
                       Code
                     </Button>
-                    <Button variant="outline" size="sm" className="gap-2" onClick={() => window.open('#', '_blank')}>
+                    {/* <Button variant="outline" size="sm" className="gap-2" onClick={() => window.open('#', '_blank')}>
                       <ExternalLink className="w-4 h-4" />
                       Live
-                    </Button>
+                    </Button> */}
                   </div>
                 </div>
               </Card>
@@ -385,7 +415,9 @@ const Index = () => {
 
             <div className="grid md:grid-cols-2 gap-6">
               {/* Blog Post 1 */}
-              <Card className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card cursor-pointer">
+              <Card 
+                className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card cursor-pointer"
+              >
                 <div className="space-y-4">
                   <div className="flex items-start justify-between">
                     <Badge variant="secondary" className="mb-2">AI & LLMs</Badge>
@@ -408,7 +440,9 @@ const Index = () => {
               </Card>
 
               {/* Blog Post 2 */}
-              <Card className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card cursor-pointer">
+              <Card 
+                className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card cursor-pointer"
+              >
                 <div className="space-y-4">
                   <div className="flex items-start justify-between">
                     <Badge variant="secondary" className="mb-2">Backend</Badge>
@@ -431,7 +465,9 @@ const Index = () => {
               </Card>
 
               {/* Blog Post 3 */}
-              <Card className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card cursor-pointer">
+              <Card 
+                className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card cursor-pointer"
+              >
                 <div className="space-y-4">
                   <div className="flex items-start justify-between">
                     <Badge variant="secondary" className="mb-2">DevOps</Badge>
@@ -454,7 +490,9 @@ const Index = () => {
               </Card>
 
               {/* Blog Post 4 */}
-              <Card className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card cursor-pointer">
+              <Card 
+                className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card cursor-pointer"
+              >
                 <div className="space-y-4">
                   <div className="flex items-start justify-between">
                     <Badge variant="secondary" className="mb-2">Full-Stack</Badge>
@@ -497,37 +535,51 @@ const Index = () => {
                   <Badge>Java</Badge>
                   <Badge>JavaScript</Badge>
                   <Badge>Python</Badge>
+                  <Badge>TypeScript</Badge>
                 </div>
               </div>
 
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-foreground">Backend & Full-Stack</h3>
+                <h3 className="text-lg font-semibold text-foreground">Libraries & Frameworks</h3>
                 <div className="flex flex-wrap gap-2">
+                  <Badge>React.js</Badge>
+                  <Badge>Next.js</Badge>
+                  <Badge>Tailwind CSS</Badge>
+                  <Badge>Prisma ORM</Badge>
                   <Badge>Node.js</Badge>
+                  <Badge>Hono</Badge>
                   <Badge>Express.js</Badge>
+                  <Badge>JWT</Badge>
+                  <Badge>ZOD</Badge>
+                  <Badge>Langchain</Badge>
+                  <Badge>CrewAI</Badge>
                   <Badge>REST APIs</Badge>
-                  <Badge>MongoDB</Badge>
                   <Badge>Mongoose</Badge>
                 </div>
               </div>
 
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-foreground">Frontend</h3>
+                <h3 className="text-lg font-semibold text-foreground">Databases</h3>
                 <div className="flex flex-wrap gap-2">
-                  <Badge>React.js</Badge>
-                  <Badge>Tailwind CSS</Badge>
-                  <Badge>Redux</Badge>
+                  <Badge>MongoDB</Badge>
+                  <Badge>PostgreSQL</Badge>
+                  <Badge>Firebase</Badge>
+                  <Badge>Aiven</Badge>
+                  <Badge>Neon</Badge>
+                  <Badge>ChromaDB</Badge>
                 </div>
               </div>
 
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-foreground">AI / Automation</h3>
+                <h3 className="text-lg font-semibold text-foreground">Core CS</h3>
                 <div className="flex flex-wrap gap-2">
-                  <Badge>LangChain</Badge>
-                  <Badge>RAG</Badge>
-                  <Badge>ChromaDB</Badge>
-                  <Badge>AutoX LLM</Badge>
-                  <Badge>CrewAI</Badge>
+                  <Badge>Data Structures & Algorithms</Badge>
+                  <Badge>Object-Oriented Programming</Badge>
+                  <Badge>Database Management</Badge>
+                  <Badge>System Design</Badge>
+                  <Badge>Computer Networks</Badge>
+                  <Badge>Operating Systems</Badge>
+                  <Badge>Distributed Systems</Badge>
                 </div>
               </div>
 
@@ -537,28 +589,19 @@ const Index = () => {
                   <Badge>Docker</Badge>
                   <Badge>Kubernetes</Badge>
                   <Badge>AWS</Badge>
+                  <Badge>Cloudflare Workers</Badge>
                 </div>
               </div>
 
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-foreground">Tools</h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge>Git</Badge>
-                  <Badge>Jira</Badge>
-                  <Badge>VS Code</Badge>
-                  <Badge>IntelliJ</Badge>
-                  <Badge>Postman</Badge>
-                </div>
-              </div>
-
-              <div className="space-y-4 md:col-span-2">
                 <h3 className="text-lg font-semibold text-foreground">Core CS</h3>
                 <div className="flex flex-wrap gap-2">
-                  <Badge>DSA (C++)</Badge>
-                  <Badge>OOP</Badge>
-                  <Badge>OS</Badge>
-                  <Badge>DBMS</Badge>
-                  <Badge>CN</Badge>
+                  <Badge>Data Structures</Badge>
+                  <Badge>Algorithms</Badge>
+                  <Badge>Operating Systems</Badge>
+                  <Badge>Database Management</Badge>
+                  <Badge>Computer Networks</Badge>
+                  <Badge>Object-Oriented Programming</Badge>
                 </div>
               </div>
             </div>
@@ -608,23 +651,23 @@ const Index = () => {
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center mb-12">
-              <Button variant="outline" size="lg" className="gap-2" onClick={() => window.open('mailto:email@example.com')}>
+              <Button variant="outline" size="lg" className="gap-2" onClick={() => window.open('mailto:harcharansingh198400@gmail.com')}>
                 <Mail className="w-5 h-5" />
                 Email
               </Button>
-              <Button variant="outline" size="lg" className="gap-2" onClick={() => window.open('tel:+1234567890')}>
+              {/* <Button variant="outline" size="lg" className="gap-2" onClick={() => window.open('tel:+916283343351')}>
                 <Phone className="w-5 h-5" />
                 Phone
-              </Button>
-              <Button variant="outline" size="lg" className="gap-2" onClick={() => window.open('https://linkedin.com/in/username', '_blank')}>
+              </Button> */}
+              <Button variant="outline" size="lg" className="gap-2" onClick={() => window.open('https://www.linkedin.com/in/harcharanpreet-singh-9a245222a/', '_blank')}>
                 <Linkedin className="w-5 h-5" />
                 LinkedIn
               </Button>
-              <Button variant="outline" size="lg" className="gap-2" onClick={() => window.open('https://github.com/username', '_blank')}>
+              <Button variant="outline" size="lg" className="gap-2" onClick={() => window.open('https://github.com/singhHarcharan/', '_blank')}>
                 <Github className="w-5 h-5" />
                 GitHub
               </Button>
-              <Button variant="outline" size="lg" className="gap-2" onClick={() => window.open('https://leetcode.com/username', '_blank')}>
+              <Button variant="outline" size="lg" className="gap-2" onClick={() => window.open('https://leetcode.com/u/harcharan_singh_/', '_blank')}>
                 <Code2 className="w-5 h-5" />
                 LeetCode
               </Button>
