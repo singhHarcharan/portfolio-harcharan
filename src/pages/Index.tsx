@@ -2,11 +2,15 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { showComingSoon } from "@/utils/toast";
+import { Navigation } from "@/components/Navigation";
+import { ParticleBackground } from "@/components/ParticleBackground";
+import { AnimatedSection } from "@/components/AnimatedSection";
+import { SkillBar } from "@/components/SkillBar";
+import { motion } from "framer-motion";
 import { 
   Github, 
   Linkedin, 
   Mail, 
-  Phone, 
   ExternalLink,
   Code2,
   Briefcase,
@@ -14,679 +18,612 @@ import {
   Zap,
   BookOpen,
   Calendar,
-  ArrowRight
+  ArrowRight,
+  GraduationCap,
+  Terminal,
+  Cpu,
+  Database,
+  Cloud,
+  Layers
 } from "lucide-react";
 
 const Index = () => {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-
   return ( 
-    <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-sm">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <a href="#hero" className="text-lg font-semibold tracking-tight hover:text-accent transition-colors">
-              HS
-            </a>
-            <div className="flex gap-6 text-sm">
-              <button onClick={() => scrollToSection('about')} className="text-muted-foreground hover:text-foreground transition-colors">
-                About
-              </button>
-              <button onClick={() => scrollToSection('experience')} className="text-muted-foreground hover:text-foreground transition-colors">
-                Experience
-              </button>
-              <button onClick={() => scrollToSection('projects')} className="text-muted-foreground hover:text-foreground transition-colors">
-                Projects
-              </button>
-              <button onClick={() => scrollToSection('blogs')} className="text-muted-foreground hover:text-foreground transition-colors">
-                Blogs
-              </button>
-              <button onClick={() => scrollToSection('contact')} className="text-muted-foreground hover:text-foreground transition-colors">
-                Contact
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
+    <div className="min-h-screen bg-background relative">
+      <ParticleBackground />
+      <Navigation />
 
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-soft opacity-50" />
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in-up">
-            <div className="space-y-4">
-              <div className="inline-block">
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-gradient">
-                  Harcharanpreet Singh
-                </h1>
-              </div>
-              <p className="text-xl md:text-2xl text-foreground/80 tracking-tight">
-                Software Engineer — Backend • AI Integrations • Full-Stack Execution
-              </p>
-            </div>
-            
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              I build reliable, scalable engineering solutions and thrive in fast-moving teams where ownership matters.
-            </p>
+        <div className="absolute inset-0 bg-gradient-hero" />
+        <div className="absolute inset-0 bg-gradient-glow" />
+        
+        <div className="container-custom relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="space-y-6"
+            >
+              {/* Terminal-like intro */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card/50 border border-border/50 text-sm font-mono text-muted-foreground"
+              >
+                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                <span>Available for opportunities</span>
+              </motion.div>
 
-            <div className="flex gap-4 justify-center pt-4">
-              <Button 
-                size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-glow hover:shadow-glow-lg transition-all"
-                onClick={() => window.open('https://drive.google.com/file/d/1TkH09NauHMZHKRfaUsKYX-m-aN1ZrTai/view?usp=sharing', '_blank', 'noopener,noreferrer')}
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+                className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight"
               >
-                View Resume
-              </Button>
-              {/* <Button 
-                size="lg" 
-                variant="outline"
-                className="border-border hover:bg-muted/50"
-                onClick={() => scrollToSection('projects')}
+                <span className="text-gradient-animated">Harcharanpreet Singh</span>
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto"
               >
-                See My Work
-              </Button> */}
-            </div>
+                Software Engineer — <span className="text-primary">Backend</span> • <span className="text-accent">AI Integrations</span> • <span className="text-gradient-cyan">Full-Stack</span>
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.6 }}
+                className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed"
+              >
+                I build reliable, scalable engineering solutions and thrive in fast-moving teams where ownership matters.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.6 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center pt-4"
+              >
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-primary hover:opacity-90 text-white glow-sm hover:glow transition-all px-8"
+                  onClick={() => window.open('https://drive.google.com/file/d/1TkH09NauHMZHKRfaUsKYX-m-aN1ZrTai/view?usp=sharing', '_blank', 'noopener,noreferrer')}
+                >
+                  View Resume
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="border-border/50 hover:bg-card/50 hover:border-primary/50 transition-all"
+                  onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  See My Work
+                </Button>
+              </motion.div>
+
+              {/* Social Links */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.8, duration: 0.6 }}
+                className="flex gap-4 justify-center pt-8"
+              >
+                {[
+                  { icon: Github, href: 'https://github.com/singhHarcharan/', label: 'GitHub' },
+                  { icon: Linkedin, href: 'https://www.linkedin.com/in/harcharanpreet-singh-9a245222a/', label: 'LinkedIn' },
+                  { icon: Mail, href: 'mailto:harcharansingh198400@gmail.com', label: 'Email' },
+                  { icon: Code2, href: 'https://leetcode.com/u/harcharan_singh_/', label: 'LeetCode' },
+                ].map(({ icon: Icon, href, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 rounded-xl bg-card/50 border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/50 hover:glow-sm transition-all"
+                    aria-label={label}
+                  >
+                    <Icon className="h-5 w-5" />
+                  </a>
+                ))}
+              </motion.div>
+            </motion.div>
           </div>
         </div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        >
+          <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center pt-2">
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className="w-1.5 h-1.5 rounded-full bg-primary"
+            />
+          </div>
+        </motion.div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 border-t border-border">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
+      <section id="about" className="section-padding relative">
+        <div className="container-custom">
+          <AnimatedSection className="max-w-4xl mx-auto">
             <div className="flex items-center gap-3 mb-8">
-              <Zap className="w-5 h-5 text-accent" />
-              <h2 className="text-3xl font-bold tracking-tight">About</h2>
+              <div className="p-2 rounded-lg bg-primary/10">
+                <Zap className="w-5 h-5 text-primary" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">About Me</h2>
             </div>
             
-            <div className="prose prose-lg max-w-none space-y-4 text-muted-foreground">
-              <p className="text-lg leading-relaxed">
-                Software engineer with experience working in early-stage startups and enterprise environments. Strong focus on backend and full-stack development, automations, and AI integrations. Comfortable owning features end-to-end and working in fast-moving teams where clarity is built through execution.
+            <Card className="p-6 md:p-8 bg-card/50 border-border/50 hover-lift">
+              <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+                Software engineer with experience working in <span className="text-foreground font-medium">early-stage startups</span> and <span className="text-foreground font-medium">enterprise environments</span>. Strong focus on backend and full-stack development, automations, and AI integrations. Comfortable owning features end-to-end and working in fast-moving teams where clarity is built through execution.
               </p>
-            </div>
-          </div>
+            </Card>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-24 border-t border-border bg-muted/30">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
+      <section id="experience" className="section-padding relative bg-card/30">
+        <div className="container-custom">
+          <AnimatedSection className="max-w-4xl mx-auto">
             <div className="flex items-center gap-3 mb-12">
-              <Briefcase className="w-5 h-5 text-accent" />
-              <h2 className="text-3xl font-bold tracking-tight">Experience</h2>
+              <div className="p-2 rounded-lg bg-primary/10">
+                <Briefcase className="w-5 h-5 text-primary" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Experience</h2>
             </div>
 
-            <div className="space-y-12">
-              {/* Amdocs */}
-              <Card className="p-8 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow bg-card">
-                <div className="space-y-4">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
-                    <div>
-                      <h3 className="text-2xl font-semibold tracking-tight">Software Development Engineer</h3>
-                      <p className="text-lg text-muted-foreground">Amdocs</p>
-                    </div>
-                    <span className="text-sm text-muted-foreground whitespace-nowrap">2024 – Present</span>
-                  </div>
-                  
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li className="flex gap-2">
-                      <span className="text-accent mt-1.5">•</span>
-                      <span>Independently developed <strong className="text-foreground">TechMate AI</strong>, an internal AI-powered automation system for Microsoft Teams using LangChain, ChromaDB (RAG) & AutoX LLM, reducing repetitive queries & cutting IT response time by 30%.</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-accent mt-1.5">•</span>
-                      <span>Integrated Power Automate Flows with Teams to enable real-time query resolution, reducing manual expert intervention by 40% and improving query turnaround time.</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-accent mt-1.5">•</span>
-                      <span>Built SharePointRAGLoader to process enterprise documents, enabling contextual AI responses and decreasing manual document lookup time by 50%.</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-accent mt-1.5">•</span>
-                      <span>Maintained backend services for Telstra, a major telecom client, using Java and Spring Boot.</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-accent mt-1.5">•</span>
-                      <span>Modified and enhanced existing RESTful APIs, contributing to backend service improvements & system efficiency.</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-accent mt-1.5">•</span>
-                      <span>Collaborated with cross-functional teams to integrate backend solutions with frontend & third-party services.</span>
-                    </li>
-                  </ul>
+            {/* Timeline */}
+            <div className="relative pl-8 space-y-12">
+              <div className="timeline-line" />
 
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    <Badge variant="secondary">Python</Badge>
-                    <Badge variant="secondary">LangChain</Badge>
-                    <Badge variant="secondary">RAG</Badge>
-                    <Badge variant="secondary">ChromaDB</Badge>
-                    <Badge variant="secondary">Java</Badge>
-                    <Badge variant="secondary">REST APIs</Badge>
-                    <Badge variant="secondary">Power Automate</Badge>
+              {/* Amdocs */}
+              <AnimatedSection delay={0.1} className="relative">
+                <div className="timeline-dot top-2" />
+                <Card className="p-6 md:p-8 bg-card/50 border-border/50 hover-lift hover:border-primary/30 transition-all">
+                  <div className="space-y-4">
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-semibold tracking-tight">Software Development Engineer</h3>
+                        <p className="text-base md:text-lg text-primary">Amdocs</p>
+                      </div>
+                      <Badge variant="secondary" className="w-fit">2024 – Present</Badge>
+                    </div>
+                    
+                    <ul className="space-y-3 text-muted-foreground">
+                      <li className="flex gap-3">
+                        <span className="text-primary mt-1.5 text-lg">›</span>
+                        <span>Independently developed <strong className="text-foreground">TechMate AI</strong>, an internal AI-powered automation system for Microsoft Teams using LangChain, ChromaDB (RAG) & AutoX LLM, reducing repetitive queries & cutting IT response time by 30%.</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="text-primary mt-1.5 text-lg">›</span>
+                        <span>Integrated Power Automate Flows with Teams to enable real-time query resolution, reducing manual expert intervention by 40%.</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="text-primary mt-1.5 text-lg">›</span>
+                        <span>Built SharePointRAGLoader to process enterprise documents, enabling contextual AI responses.</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="text-primary mt-1.5 text-lg">›</span>
+                        <span>Maintained backend services for Telstra using Java and Spring Boot.</span>
+                      </li>
+                    </ul>
+
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {['Python', 'LangChain', 'RAG', 'ChromaDB', 'Java', 'REST APIs', 'Power Automate'].map(tech => (
+                        <Badge key={tech} variant="secondary" className="bg-primary/10 text-primary border-0">{tech}</Badge>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </Card>
+                </Card>
+              </AnimatedSection>
 
               {/* Upaav */}
-              <Card className="p-8 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow bg-card">
-                <div className="space-y-4">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
-                    <div>
-                      <h3 className="text-2xl font-semibold tracking-tight">Founding Engineer</h3>
-                      <p className="text-lg text-muted-foreground">Upaav • Worked closely with Co-Founder</p>
+              <AnimatedSection delay={0.2} className="relative">
+                <div className="timeline-dot top-2" />
+                <Card className="p-6 md:p-8 bg-card/50 border-border/50 hover-lift hover:border-primary/30 transition-all">
+                  <div className="space-y-4">
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-semibold tracking-tight">Founding Engineer</h3>
+                        <p className="text-base md:text-lg text-primary">Upaav • Worked closely with Co-Founder</p>
+                      </div>
+                      <Badge variant="secondary" className="w-fit">2024</Badge>
                     </div>
-                    <span className="text-sm text-muted-foreground whitespace-nowrap">2024</span>
-                  </div>
-                  
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li className="flex gap-2">
-                      <span className="text-accent mt-1.5">•</span>
-                      <span>Independently developed an <strong className="text-foreground">Atlassian Jira plugin</strong> end-to-end, reducing operational overhead costs by 20–30%</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-accent mt-1.5">•</span>
-                      <span>Designed and built UI with React.js for seamless task visualization and time logging workflows</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-accent mt-1.5">•</span>
-                      <span>Developed backend using Node.js and Atlassian Forge storage, achieving 100% secure session handling by leveraging native site authentication without separate auth layer</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-accent mt-1.5">•</span>
-                      <span>Implemented key features including work logging in hours/minutes, a dynamic calendar interface, and real-time ticket displays based on user activity data pulled from Jira</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-accent mt-1.5">•</span>
-                      <span>Delivered MVP in under 10 weeks, enabling stakeholder demos, early onboarding, & shaping product roadmap</span>
-                    </li>
-                  </ul>
+                    
+                    <ul className="space-y-3 text-muted-foreground">
+                      <li className="flex gap-3">
+                        <span className="text-primary mt-1.5 text-lg">›</span>
+                        <span>Independently developed an <strong className="text-foreground">Atlassian Jira plugin</strong> end-to-end, reducing operational overhead costs by 20–30%.</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="text-primary mt-1.5 text-lg">›</span>
+                        <span>Designed and built UI with React.js for seamless task visualization and time logging workflows.</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="text-primary mt-1.5 text-lg">›</span>
+                        <span>Developed backend using Node.js and Atlassian Forge storage, achieving 100% secure session handling.</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="text-primary mt-1.5 text-lg">›</span>
+                        <span>Delivered MVP in under 10 weeks, enabling stakeholder demos and early onboarding.</span>
+                      </li>
+                    </ul>
 
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    <Badge variant="secondary">React.js</Badge>
-                    <Badge variant="secondary">Node.js</Badge>
-                    <Badge variant="secondary">Atlassian Forge</Badge>
-                    <Badge variant="secondary">Jira API</Badge>
-                    <Badge variant="secondary">REST APIs</Badge>
-                    <Badge variant="secondary">UI/UX Design</Badge>
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {['React.js', 'Node.js', 'Atlassian Forge', 'Jira API', 'REST APIs'].map(tech => (
+                        <Badge key={tech} variant="secondary" className="bg-accent/10 text-accent border-0">{tech}</Badge>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </Card>
+                </Card>
+              </AnimatedSection>
 
               {/* XcitEducation */}
-              <Card className="p-8 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow bg-card">
-                <div className="space-y-4">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
-                    <div>
-                      <h3 className="text-2xl font-semibold tracking-tight">Subject Matter Expert</h3>
-                      <p className="text-lg text-muted-foreground">XcitEducation Worldwide</p>
+              <AnimatedSection delay={0.3} className="relative">
+                <div className="timeline-dot top-2" />
+                <Card className="p-6 md:p-8 bg-card/50 border-border/50 hover-lift hover:border-primary/30 transition-all">
+                  <div className="space-y-4">
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2">
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-semibold tracking-tight">Subject Matter Expert</h3>
+                        <p className="text-base md:text-lg text-primary">XcitEducation Worldwide</p>
+                      </div>
+                      <Badge variant="secondary" className="w-fit">Aug – Sept 2022</Badge>
                     </div>
-                    <span className="text-sm text-muted-foreground whitespace-nowrap">Aug 2022 – Sept 2022</span>
-                  </div>
-                  
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li className="flex gap-2">
-                      <span className="text-accent mt-1.5">•</span>
-                      <span>Mentored <strong className="text-foreground">60+ B.Tech students</strong> in Data Structures & Algorithms, providing advanced C++ programming guidance</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="text-accent mt-1.5">•</span>
-                      <span>Resolved complex queries for <strong className="text-foreground">80+ students</strong>, leveraging strong communication and problem-solving skills to drive learning outcomes</span>
-                    </li>
-                  </ul>
+                    
+                    <ul className="space-y-3 text-muted-foreground">
+                      <li className="flex gap-3">
+                        <span className="text-primary mt-1.5 text-lg">›</span>
+                        <span>Mentored <strong className="text-foreground">60+ B.Tech students</strong> in Data Structures & Algorithms with advanced C++ programming guidance.</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="text-primary mt-1.5 text-lg">›</span>
+                        <span>Resolved complex queries for <strong className="text-foreground">80+ students</strong> with strong communication and problem-solving skills.</span>
+                      </li>
+                    </ul>
 
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    <Badge variant="secondary">C++</Badge>
-                    <Badge variant="secondary">Data Structures</Badge>
-                    <Badge variant="secondary">Algorithms</Badge>
-                    <Badge variant="secondary">Mentoring</Badge>
-                    <Badge variant="secondary">Technical Training</Badge>
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {['C++', 'Data Structures', 'Algorithms', 'Mentoring'].map(tech => (
+                        <Badge key={tech} variant="secondary" className="bg-muted text-muted-foreground border-0">{tech}</Badge>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </Card>
+                </Card>
+              </AnimatedSection>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-24 border-t border-border">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
+      <section id="projects" className="section-padding relative">
+        <div className="container-custom">
+          <AnimatedSection className="max-w-5xl mx-auto">
             <div className="flex items-center gap-3 mb-12">
-              <Code2 className="w-5 h-5 text-accent" />
-              <h2 className="text-3xl font-bold tracking-tight">Featured Projects</h2>
+              <div className="p-2 rounded-lg bg-primary/10">
+                <Code2 className="w-5 h-5 text-primary" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Featured Projects</h2>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
-              {/* PayPocket */}
-              <Card className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card">
-                <div className="space-y-4">
-                  <div className="flex items-start justify-between">
-                    <h3 className="text-xl font-semibold tracking-tight group-hover:text-gradient transition-all">
-                      PayPocket
-                    </h3>
-                    <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
-                  </div>
-                  
-                  <p className="text-muted-foreground">
-                    Digital Wallet — Full-stack wallet application with JWT-based authentication, atomic money transfers, and real-time balance updates.
-                  </p>
-                  {/* <p className="text-muted-foreground">
-                    Wallet App (Paytm Clone) — Secure wallet app with authentication, money transfer, and MongoDB transaction guarantees.
-                  </p> */}
+              {[
+                {
+                  title: 'PayPocket',
+                  description: 'Digital Wallet — Full-stack wallet application with JWT-based authentication, atomic money transfers, and real-time balance updates.',
+                  tech: ['React', 'Tailwind', 'Node.js', 'Express', 'MongoDB', 'JWT'],
+                  github: 'https://github.com/singhHarcharan/PayPocket',
+                  gradient: 'from-blue-500/20 to-cyan-500/20',
+                },
+                {
+                  title: 'Movie Arena',
+                  description: 'A modern streaming platform built with React, Redux & Firebase. Browse, search, and discover movies with an intuitive interface.',
+                  tech: ['React', 'Redux', 'Firebase', 'Stripe'],
+                  github: 'https://github.com/singhHarcharan/Movie-Arena',
+                  gradient: 'from-purple-500/20 to-pink-500/20',
+                },
+                {
+                  title: 'TripCraft AI',
+                  description: 'AI-powered travel planner using LLMs and RAG. Get personalized trip recommendations and smart itinerary generation.',
+                  tech: ['LLM', 'RAG', 'Python', 'React', 'OpenAI'],
+                  github: 'https://github.com/singhHarcharan/TripCraft-AI.git',
+                  gradient: 'from-green-500/20 to-emerald-500/20',
+                },
+                {
+                  title: 'Rain Vine',
+                  description: 'A sleek weather app built with React. Get real-time weather updates with dynamic backgrounds that change with temperature.',
+                  tech: ['React', 'OpenWeatherMap API'],
+                  github: 'https://github.com/singhHarcharan/Rain-Vine',
+                  gradient: 'from-orange-500/20 to-yellow-500/20',
+                },
+              ].map((project, index) => (
+                <AnimatedSection key={project.title} delay={index * 0.1}>
+                  <Card className={`group p-6 bg-gradient-to-br ${project.gradient} border-border/50 hover-lift hover:border-primary/30 transition-all h-full`}>
+                    <div className="space-y-4 h-full flex flex-col">
+                      <div className="flex items-start justify-between">
+                        <h3 className="text-xl font-semibold tracking-tight group-hover:text-gradient transition-all">
+                          {project.title}
+                        </h3>
+                        <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                      </div>
+                      
+                      <p className="text-muted-foreground flex-grow">
+                        {project.description}
+                      </p>
 
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">React</Badge>
-                    <Badge variant="secondary">Tailwind</Badge>
-                    <Badge variant="secondary">Node.js</Badge>
-                    <Badge variant="secondary">Express</Badge>
-                    <Badge variant="secondary">MongoDB</Badge>
-                    <Badge variant="secondary">JWT</Badge>
-                  </div>
+                      <div className="flex flex-wrap gap-2">
+                        {project.tech.map(tech => (
+                          <Badge key={tech} variant="secondary" className="bg-background/50 text-foreground/80 border border-border/50">{tech}</Badge>
+                        ))}
+                      </div>
 
-                  <div className="flex gap-3 mt-4">
-                    <Button variant="outline" size="sm" className="gap-2" onClick={() => window.open('https://github.com/singhHarcharan/PayPocket', '_blank')}>
-                      <Github className="w-4 h-4" />
-                      Code
-                    </Button>
-                    {/* <Button variant="outline" size="sm" className="gap-2" onClick={() => window.open('#', '_blank')}>
-                      <ExternalLink className="w-4 h-4" />
-                      Live
-                    </Button> */}
-                  </div>
-                </div>
-              </Card>
-
-              {/* Movie Arena */}
-              <Card className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card">
-                <div className="space-y-4">
-                  <div className="flex items-start justify-between">
-                    <h3 className="text-xl font-semibold tracking-tight group-hover:text-gradient transition-all">
-                      Movie Arena
-                    </h3>
-                    <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
-                  </div>
-                  
-                  <p className="text-muted-foreground">
-                      A modern streaming platform built with React, Redux & Firebase. Browse, search, and discover movies with an intuitive interface. Features user authentication, responsive design, and real-time updates. Deployed on Firebase.
-                  </p>
-
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">React</Badge>
-                    <Badge variant="secondary">Redux</Badge>
-                    <Badge variant="secondary">Firebase</Badge>
-                    <Badge variant="secondary">Stripe</Badge>
-                  </div>
-
-                  <div className="flex gap-3 mt-4">
-                    <Button variant="outline" size="sm" className="gap-2" onClick={() => window.open('https://github.com/singhHarcharan/Movie-Arena', '_blank')}>
-                      <Github className="w-4 h-4" />
-                      Code
-                    </Button>
-                    {/* <Button variant="outline" size="sm" className="gap-2" onClick={() => window.open('#', '_blank')}>
-                      <ExternalLink className="w-4 h-4" />
-                      Live
-                    </Button> */}
-                  </div>
-                </div>
-              </Card>
-
-              {/* TripCraft AI */}
-              <Card className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card">
-                <div className="space-y-4">
-                  <div className="flex items-start justify-between">
-                    <h3 className="text-xl font-semibold tracking-tight group-hover:text-gradient transition-all">
-                      TripCraft AI
-                    </h3>
-                    <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
-                  </div>
-                  
-                  <p className="text-muted-foreground">
-                    AI-powered travel planner using LLMs and RAG. Get personalized trip recommendations, weather-optimized scheduling, and smart itinerary generation.
-                  </p>
-
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">LLM</Badge>
-                    <Badge variant="secondary">RAG</Badge>
-                    <Badge variant="secondary">Python</Badge>
-                    <Badge variant="secondary">React</Badge>
-                    <Badge variant="secondary">OpenAI</Badge>
-                  </div>
-
-                  <div className="flex gap-3 mt-4">
-                    <Button variant="outline" size="sm" className="gap-2" onClick={() => window.open('https://github.com/singhHarcharan/TripCraft-AI.git', '_blank')}>
-                      <Github className="w-4 h-4" />
-                      Code
-                    </Button>
-                  </div>
-                </div>
-              </Card>
-
-              {/* Rain Vine */}
-              <Card className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card">
-                <div className="space-y-4">
-                  <div className="flex items-start justify-between">
-                    <h3 className="text-xl font-semibold tracking-tight group-hover:text-gradient transition-all">
-                      Rain Vine
-                    </h3>
-                    <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors" />
-                  </div>
-                  
-                  <p className="text-muted-foreground">
-                      A sleek weather app built with React. Get real-time weather updates for any city with a clean, responsive interface. Features dynamic backgrounds that change with the temperature. Built with React and OpenWeatherMap API.
-                  </p>
-
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">React</Badge>
-                    <Badge variant="secondary">OpenWeatherMap API</Badge>
-                  </div>
-
-                  <div className="flex gap-3 mt-4">
-                    <Button variant="outline" size="sm" className="gap-2" onClick={() => window.open('https://github.com/singhHarcharan/Rain-Vine', '_blank')}>
-                      <Github className="w-4 h-4" />
-                      Code
-                    </Button>
-                    {/* <Button variant="outline" size="sm" className="gap-2" onClick={() => window.open('#', '_blank')}>
-                      <ExternalLink className="w-4 h-4" />
-                      Live
-                    </Button> */}
-                  </div>
-                </div>
-              </Card>
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="gap-2 w-fit mt-auto border-border/50 hover:border-primary/50 hover:bg-primary/10" 
+                        onClick={() => window.open(project.github, '_blank')}
+                      >
+                        <Github className="w-4 h-4" />
+                        View Code
+                      </Button>
+                    </div>
+                  </Card>
+                </AnimatedSection>
+              ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Blogs Section */}
-      <section id="blogs" className="py-24 border-t border-border relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-soft opacity-30" />
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex items-center gap-3 mb-12">
-              <BookOpen className="w-5 h-5 text-accent" />
-              <h2 className="text-3xl font-bold tracking-tight">Tech Blogs</h2>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {/* Blog Post 1 */}
-              <Card 
-                className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card cursor-pointer"
-                onClick={() => showComingSoon("Blog post coming soon!")}
-              >
-                <div className="space-y-4">
-                  <div className="flex items-start justify-between">
-                    <Badge variant="secondary" className="mb-2">AI & LLMs</Badge>
-                    <Calendar className="w-4 h-4 text-muted-foreground" />
-                  </div>
-                  
-                  <h3 className="text-xl font-semibold tracking-tight group-hover:text-gradient transition-all">
-                    Building Production-Ready RAG Systems
-                  </h3>
-                  
-                  <p className="text-muted-foreground line-clamp-3">
-                    A deep dive into implementing retrieval-augmented generation systems at scale, covering vector databases, embedding strategies, and real-world challenges.
-                  </p>
-
-                  <div className="flex items-center justify-between pt-2">
-                    <span className="text-sm text-muted-foreground">5 min read</span>
-                    <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all" />
-                  </div>
-                </div>
-              </Card>
-
-              {/* Blog Post 2 */}
-              <Card 
-                className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card cursor-pointer"
-                onClick={() => showComingSoon("Blog post coming soon!")}
-              >
-                <div className="space-y-4">
-                  <div className="flex items-start justify-between">
-                    <Badge variant="secondary" className="mb-2">Backend</Badge>
-                    <Calendar className="w-4 h-4 text-muted-foreground" />
-                  </div>
-                  
-                  <h3 className="text-xl font-semibold tracking-tight group-hover:text-gradient transition-all">
-                    Microservices Architecture Best Practices
-                  </h3>
-                  
-                  <p className="text-muted-foreground line-clamp-3">
-                    Lessons learned from building and scaling microservices in production, including service communication, data consistency, and monitoring strategies.
-                  </p>
-
-                  <div className="flex items-center justify-between pt-2">
-                    <span className="text-sm text-muted-foreground">8 min read</span>
-                    <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all" />
-                  </div>
-                </div>
-              </Card>
-
-              {/* Blog Post 3 */}
-              <Card 
-                className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card cursor-pointer"
-                onClick={() => showComingSoon("Blog post coming soon!")}
-              >
-                <div className="space-y-4">
-                  <div className="flex items-start justify-between">
-                    <Badge variant="secondary" className="mb-2">DevOps</Badge>
-                    <Calendar className="w-4 h-4 text-muted-foreground" />
-                  </div>
-                  
-                  <h3 className="text-xl font-semibold tracking-tight group-hover:text-gradient transition-all">
-                    Docker & Kubernetes in Practice
-                  </h3>
-                  
-                  <p className="text-muted-foreground line-clamp-3">
-                    A practical guide to containerization and orchestration, from local development to production deployment with real-world examples.
-                  </p>
-
-                  <div className="flex items-center justify-between pt-2">
-                    <span className="text-sm text-muted-foreground">6 min read</span>
-                    <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all" />
-                  </div>
-                </div>
-              </Card>
-
-              {/* Blog Post 4 */}
-              <Card 
-                className="p-6 border-border hover:border-primary/30 transition-all duration-300 hover:shadow-glow group bg-card cursor-pointer"
-                onClick={() => showComingSoon("Blog post coming soon!")}
-              >
-                <div className="space-y-4">
-                  <div className="flex items-start justify-between">
-                    <Badge variant="secondary" className="mb-2">Full-Stack</Badge>
-                    <Calendar className="w-4 h-4 text-muted-foreground" />
-                  </div>
-                  
-                  <h3 className="text-xl font-semibold tracking-tight group-hover:text-gradient transition-all">
-                    React Performance Optimization
-                  </h3>
-                  
-                  <p className="text-muted-foreground line-clamp-3">
-                    Advanced techniques for optimizing React applications, including memoization, lazy loading, code splitting, and rendering optimization strategies.
-                  </p>
-
-                  <div className="flex items-center justify-between pt-2">
-                    <span className="text-sm text-muted-foreground">7 min read</span>
-                    <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-accent group-hover:translate-x-1 transition-all" />
-                  </div>
-                </div>
-              </Card>
-            </div>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-24 border-t border-border bg-muted/30">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
+      <section id="skills" className="section-padding relative bg-card/30">
+        <div className="container-custom">
+          <AnimatedSection className="max-w-5xl mx-auto">
             <div className="flex items-center gap-3 mb-12">
-              <Code2 className="w-5 h-5 text-accent" />
-              <h2 className="text-3xl font-bold tracking-tight">Skills</h2>
+              <div className="p-2 rounded-lg bg-primary/10">
+                <Layers className="w-5 h-5 text-primary" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Skills & Technologies</h2>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-foreground">Languages</h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge>C++</Badge>
-                  <Badge>Java</Badge>
-                  <Badge>JavaScript</Badge>
-                  <Badge>Python</Badge>
-                  <Badge>TypeScript</Badge>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-foreground">Libraries & Frameworks</h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge>React.js</Badge>
-                  <Badge>Next.js</Badge>
-                  <Badge>Tailwind CSS</Badge>
-                  <Badge>Prisma ORM</Badge>
-                  <Badge>Node.js</Badge>
-                  <Badge>Hono</Badge>
-                  <Badge>Express.js</Badge>
-                  <Badge>JWT</Badge>
-                  <Badge>ZOD</Badge>
-                  <Badge>Langchain</Badge>
-                  <Badge>CrewAI</Badge>
-                  <Badge>REST APIs</Badge>
-                  <Badge>Mongoose</Badge>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-foreground">Databases</h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge>MongoDB</Badge>
-                  <Badge>PostgreSQL</Badge>
-                  <Badge>Firebase</Badge>
-                  <Badge>Aiven</Badge>
-                  <Badge>Neon</Badge>
-                  <Badge>ChromaDB</Badge>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-foreground">Core CS</h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge>Data Structures & Algorithms</Badge>
-                  <Badge>Object-Oriented Programming</Badge>
-                  <Badge>Database Management</Badge>
-                  <Badge>System Design</Badge>
-                  <Badge>Computer Networks</Badge>
-                  <Badge>Operating Systems</Badge>
-                  <Badge>Distributed Systems</Badge>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-foreground">Cloud / DevOps</h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge>Docker</Badge>
-                  <Badge>Kubernetes</Badge>
-                  <Badge>AWS</Badge>
-                  <Badge>Cloudflare Workers</Badge>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-foreground">Core CS</h3>
-                <div className="flex flex-wrap gap-2">
-                  <Badge>Data Structures</Badge>
-                  <Badge>Algorithms</Badge>
-                  <Badge>Operating Systems</Badge>
-                  <Badge>Database Management</Badge>
-                  <Badge>Computer Networks</Badge>
-                  <Badge>Object-Oriented Programming</Badge>
-                </div>
-              </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  icon: Terminal,
+                  title: 'Languages',
+                  skills: ['C++', 'Java', 'JavaScript', 'Python', 'TypeScript'],
+                },
+                {
+                  icon: Cpu,
+                  title: 'Libraries & Frameworks',
+                  skills: ['React.js', 'Next.js', 'Node.js', 'Express.js', 'Tailwind CSS', 'LangChain', 'CrewAI'],
+                },
+                {
+                  icon: Database,
+                  title: 'Databases',
+                  skills: ['MongoDB', 'PostgreSQL', 'Firebase', 'ChromaDB', 'Neon', 'Aiven'],
+                },
+                {
+                  icon: Cloud,
+                  title: 'Cloud & DevOps',
+                  skills: ['Docker', 'Kubernetes', 'AWS', 'Cloudflare Workers'],
+                },
+                {
+                  icon: Layers,
+                  title: 'Tools & APIs',
+                  skills: ['Git', 'REST APIs', 'Prisma ORM', 'JWT', 'Jira', 'Postman'],
+                },
+                {
+                  icon: GraduationCap,
+                  title: 'Core CS',
+                  skills: ['DSA', 'System Design', 'OOP', 'DBMS', 'OS', 'CN'],
+                },
+              ].map((category, index) => (
+                <AnimatedSection key={category.title} delay={index * 0.1}>
+                  <Card className="p-6 bg-card/50 border-border/50 hover-lift hover:border-primary/30 transition-all h-full">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="p-2 rounded-lg bg-primary/10">
+                        <category.icon className="w-4 h-4 text-primary" />
+                      </div>
+                      <h3 className="font-semibold">{category.title}</h3>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {category.skills.map(skill => (
+                        <Badge key={skill} variant="secondary" className="bg-muted/50 text-foreground/80 border border-border/30 hover:border-primary/50 hover:bg-primary/10 transition-all cursor-default">
+                          {skill}
+                        </Badge>
+                      ))}
+                    </div>
+                  </Card>
+                </AnimatedSection>
+              ))}
             </div>
-          </div>
+
+            {/* Skill Bars */}
+            <AnimatedSection delay={0.3} className="mt-12">
+              <Card className="p-6 md:p-8 bg-card/50 border-border/50">
+                <h3 className="text-lg font-semibold mb-6">Proficiency Levels</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <SkillBar name="Backend Development" level={90} delay={100} />
+                  <SkillBar name="React & Frontend" level={85} delay={200} />
+                  <SkillBar name="AI & LLM Integration" level={80} delay={300} />
+                  <SkillBar name="System Design" level={75} delay={400} />
+                  <SkillBar name="DevOps & Cloud" level={70} delay={500} />
+                  <SkillBar name="Data Structures & Algorithms" level={92} delay={600} />
+                </div>
+              </Card>
+            </AnimatedSection>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Blogs Section */}
+      <section id="blogs" className="section-padding relative">
+        <div className="container-custom">
+          <AnimatedSection className="max-w-5xl mx-auto">
+            <div className="flex items-center gap-3 mb-12">
+              <div className="p-2 rounded-lg bg-primary/10">
+                <BookOpen className="w-5 h-5 text-primary" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Tech Blogs</h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                {
+                  category: 'AI & LLMs',
+                  title: 'Building Production-Ready RAG Systems',
+                  description: 'A deep dive into implementing retrieval-augmented generation systems at scale, covering vector databases and embedding strategies.',
+                  readTime: '5 min read',
+                },
+                {
+                  category: 'Backend',
+                  title: 'Microservices Architecture Best Practices',
+                  description: 'Lessons learned from building and scaling microservices in production, including service communication and monitoring.',
+                  readTime: '8 min read',
+                },
+                {
+                  category: 'DevOps',
+                  title: 'Docker & Kubernetes in Practice',
+                  description: 'A practical guide to containerization and orchestration, from local development to production deployment.',
+                  readTime: '6 min read',
+                },
+                {
+                  category: 'Full-Stack',
+                  title: 'React Performance Optimization',
+                  description: 'Advanced techniques for optimizing React applications, including memoization, lazy loading, and code splitting.',
+                  readTime: '7 min read',
+                },
+              ].map((post, index) => (
+                <AnimatedSection key={post.title} delay={index * 0.1}>
+                  <Card 
+                    className="group p-6 bg-card/50 border-border/50 hover-lift hover:border-primary/30 transition-all cursor-pointer h-full"
+                    onClick={() => showComingSoon("Blog post coming soon!")}
+                  >
+                    <div className="space-y-4 h-full flex flex-col">
+                      <div className="flex items-center justify-between">
+                        <Badge variant="secondary" className="bg-primary/10 text-primary border-0">{post.category}</Badge>
+                        <Calendar className="w-4 h-4 text-muted-foreground" />
+                      </div>
+                      
+                      <h3 className="text-lg font-semibold tracking-tight group-hover:text-gradient transition-all">
+                        {post.title}
+                      </h3>
+                      
+                      <p className="text-muted-foreground text-sm flex-grow">
+                        {post.description}
+                      </p>
+
+                      <div className="flex items-center justify-between pt-2">
+                        <span className="text-sm text-muted-foreground">{post.readTime}</span>
+                        <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                      </div>
+                    </div>
+                  </Card>
+                </AnimatedSection>
+              ))}
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Achievements Section */}
-      <section id="achievements" className="py-24 border-t border-border">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
+      <section id="achievements" className="section-padding relative bg-card/30">
+        <div className="container-custom">
+          <AnimatedSection className="max-w-4xl mx-auto">
             <div className="flex items-center gap-3 mb-12">
-              <Award className="w-5 h-5 text-accent" />
-              <h2 className="text-3xl font-bold tracking-tight">Achievements</h2>
+              <div className="p-2 rounded-lg bg-primary/10">
+                <Award className="w-5 h-5 text-primary" />
+              </div>
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Achievements</h2>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
-              <Card className="p-6 border-border bg-gradient-soft/50 hover:shadow-glow transition-all">
-                <div className="space-y-2">
-                  <h3 className="text-4xl font-bold text-gradient">1100+</h3>
-                  <p className="text-muted-foreground">LeetCode Problems Solved</p>
-                  <p className="text-sm text-muted-foreground">Max Rating: 1705+ • Streak: 450+ days</p>
-                </div>
-              </Card>
+              <AnimatedSection delay={0.1}>
+                <Card className="p-6 md:p-8 bg-gradient-to-br from-blue-500/10 to-purple-500/10 border-border/50 hover-lift">
+                  <div className="space-y-2">
+                    <h3 className="text-4xl md:text-5xl font-bold text-gradient">1100+</h3>
+                    <p className="text-lg text-foreground">LeetCode Problems Solved</p>
+                    <p className="text-sm text-muted-foreground">Max Rating: 1705+ • Streak: 450+ days</p>
+                  </div>
+                </Card>
+              </AnimatedSection>
 
-              <Card className="p-6 border-border bg-gradient-soft/50 hover:shadow-glow transition-all">
-                <div className="space-y-2">
-                  <h3 className="text-4xl font-bold text-gradient">Rank 1855</h3>
-                  <p className="text-muted-foreground">Global Rank</p>
-                  <p className="text-sm text-muted-foreground">LeetCode Biweekly 151</p>
-                </div>
-              </Card>
+              <AnimatedSection delay={0.2}>
+                <Card className="p-6 md:p-8 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 border-border/50 hover-lift">
+                  <div className="space-y-2">
+                    <h3 className="text-4xl md:text-5xl font-bold text-gradient">Rank 1855</h3>
+                    <p className="text-lg text-foreground">Global Rank</p>
+                    <p className="text-sm text-muted-foreground">LeetCode Biweekly 151</p>
+                  </div>
+                </Card>
+              </AnimatedSection>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 border-t border-border bg-muted/30">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-              Let's Work Together
+      <section id="contact" className="section-padding relative">
+        <div className="absolute inset-0 bg-gradient-hero opacity-50" />
+        <div className="container-custom relative z-10">
+          <AnimatedSection className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
+              Let's Work <span className="text-gradient">Together</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
               Open to full-time roles — immediate joining available.
             </p>
 
-            <div className="flex flex-wrap gap-4 justify-center mb-12">
-              <Button variant="outline" size="lg" className="gap-2" onClick={() => window.open('mailto:harcharansingh198400@gmail.com')}>
-                <Mail className="w-5 h-5" />
-                Email
-              </Button>
-              {/* <Button variant="outline" size="lg" className="gap-2" onClick={() => window.open('tel:+916283343351')}>
-                <Phone className="w-5 h-5" />
-                Phone
-              </Button> */}
-              <Button variant="outline" size="lg" className="gap-2" onClick={() => window.open('https://www.linkedin.com/in/harcharanpreet-singh-9a245222a/', '_blank')}>
-                <Linkedin className="w-5 h-5" />
-                LinkedIn
-              </Button>
-              <Button variant="outline" size="lg" className="gap-2" onClick={() => window.open('https://github.com/singhHarcharan/', '_blank')}>
-                <Github className="w-5 h-5" />
-                GitHub
-              </Button>
-              <Button variant="outline" size="lg" className="gap-2" onClick={() => window.open('https://leetcode.com/u/harcharan_singh_/', '_blank')}>
-                <Code2 className="w-5 h-5" />
-                LeetCode
-              </Button>
+            <div className="flex flex-wrap gap-4 justify-center">
+              {[
+                { icon: Mail, label: 'Email', href: 'mailto:harcharansingh198400@gmail.com' },
+                { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/harcharanpreet-singh-9a245222a/' },
+                { icon: Github, label: 'GitHub', href: 'https://github.com/singhHarcharan/' },
+                { icon: Code2, label: 'LeetCode', href: 'https://leetcode.com/u/harcharan_singh_/' },
+              ].map(({ icon: Icon, label, href }) => (
+                <Button 
+                  key={label}
+                  variant="outline" 
+                  size="lg" 
+                  className="gap-2 border-border/50 hover:border-primary/50 hover:bg-primary/10 hover:glow-sm transition-all" 
+                  onClick={() => window.open(href, label === 'Email' ? '_self' : '_blank')}
+                >
+                  <Icon className="w-5 h-5" />
+                  {label}
+                </Button>
+              ))}
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border py-8">
-        <div className="container mx-auto px-6">
-          <p className="text-center text-sm text-muted-foreground">
-            © 2024 Harcharanpreet Singh. Built with precision and care.
-          </p>
+      <footer className="border-t border-border/50 py-8 relative z-10">
+        <div className="container-custom">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-muted-foreground">
+              © 2024 Harcharanpreet Singh. Built with precision and care.
+            </p>
+            <div className="flex items-center gap-1 text-sm text-muted-foreground">
+              <span>Designed with</span>
+              <span className="text-red-500">❤</span>
+              <span>using React & Tailwind</span>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
