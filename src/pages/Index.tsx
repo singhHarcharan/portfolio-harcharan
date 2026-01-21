@@ -105,7 +105,7 @@ const Index: React.FC = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-border/50 hover:bg-card/50 hover:border-primary/50 transition-all"
+                className="dark:border-border/50 border-border/70 hover:bg-card/50 hover:border-primary/50 dark:hover:border-primary/50 transition-all text-foreground hover:text-foreground dark:text-muted-foreground dark:hover:text-foreground"
                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 See My Work
