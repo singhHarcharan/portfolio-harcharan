@@ -39,14 +39,14 @@ const Index: React.FC = () => {
       <Navigation />
 
       {/* Hero Section with Particle Background */}
-      <div className="relative">
+      <section id="hero" className="relative min-h-screen flex items-center justify-center">
         {/* Main Content */}
-        <div className="container-custom relative z-10 pt-24 pb-32 px-4 sm:px-6">
+        <div className="container-custom relative z-10 py-24 px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
+            className="space-y-6 text-center"
           >
             {/* Available for opportunities badge */}
             <motion.div
@@ -65,7 +65,7 @@ const Index: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-center"
+              className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight"
             >
               <span className="text-gradient-animated">Harcharanpreet Singh</span>
             </motion.h1>
@@ -137,25 +137,25 @@ const Index: React.FC = () => {
                 </a>
               ))}
             </motion.div>
-
-            {/* Scroll indicator */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.2 }}
-              className="absolute bottom-8 left-1/2 -translate-x-1/2"
-            >
-              <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center pt-2">
-                <motion.div
-                  animate={{ y: [0, 8, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                  className="w-1.5 h-1.5 rounded-full bg-primary"
-                />
-              </div>
-            </motion.div>
           </motion.div>
         </div>
-      </div>
+
+        {/* Scroll indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        >
+          <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center pt-2">
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className="w-1.5 h-1.5 rounded-full bg-primary"
+            />
+          </div>
+        </motion.div>
+      </section>
 
       {/* About Section */}
       <section id="about" className="py-20 md:py-24 relative">
@@ -192,14 +192,13 @@ const Index: React.FC = () => {
             </div>
 
             {/* Timeline */}
-            <div className="relative pl-8 space-y-16">
-              <div key="timeline" className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/20 via-primary/50 to-primary/20" />
+            <div className="relative pl-10 md:pl-12 space-y-12">
+              <div className="absolute left-[7px] md:left-[9px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/20 via-primary/50 to-primary/20" />
 
               {/* Amdocs */}
-              {/* Amdocs */}
               <AnimatedSection delay={0.1} className="relative group">
-                <div className="absolute left-[-32px] top-2 w-5 h-5 rounded-full border-4 border-primary bg-background z-10 transition-transform group-hover:scale-125 group-hover:shadow-lg group-hover:shadow-primary/20" />
-                <Card className="p-8 bg-card/80 border-border/30 hover:border-primary/30 transition-all hover:shadow-lg">
+                <div className="absolute left-[-33px] md:left-[-39px] top-2 w-4 h-4 md:w-5 md:h-5 rounded-full border-4 border-primary bg-background z-10 transition-transform group-hover:scale-125 group-hover:shadow-lg group-hover:shadow-primary/20" />
+                <Card className="p-6 md:p-8 bg-card/80 border-border/30 hover:border-primary/30 transition-all hover:shadow-lg">
                   <div className="space-y-5">
                     <div className="flex flex-col md:flex-row md:items-start justify-between gap-2">
                       <div>
@@ -209,7 +208,7 @@ const Index: React.FC = () => {
                       <Badge variant="secondary" className="w-fit h-fit">2024 – Present</Badge>
                     </div>
                     
-                    <ul className="space-y-4 text-muted-foreground pl-1 mt-4">
+                    <ul className="space-y-3 text-muted-foreground">
                       <li className="flex items-start gap-3">
                         <span className="text-primary mt-1 text-lg flex-shrink-0">›</span>
                         <span>Independently developed <strong className="text-foreground">TechMate AI</strong>, an internal AI-powered automation system for Microsoft Teams using LangChain, ChromaDB (RAG) & AutoX LLM, reducing repetitive queries & cutting IT response time by 30%.</span>
@@ -228,7 +227,7 @@ const Index: React.FC = () => {
                       </li>
                     </ul>
 
-                    <div className="flex flex-wrap gap-2 pt-4 mt-2">
+                    <div className="flex flex-wrap gap-2 pt-2">
                       {['Python', 'LangChain', 'RAG', 'ChromaDB', 'Java', 'REST APIs', 'Power Automate'].map(tech => (
                         <Badge key={tech} variant="secondary" className="bg-primary/10 text-primary border-0">{tech}</Badge>
                       ))}
@@ -238,8 +237,8 @@ const Index: React.FC = () => {
               </AnimatedSection>
 
               {/* Upaav */}
-              <AnimatedSection delay={0.2} className="relative">
-                <div className="absolute left-[-30px] top-2 w-4 h-4 rounded-full border-4 border-primary bg-background z-10" />
+              <AnimatedSection delay={0.2} className="relative group">
+                <div className="absolute left-[-33px] md:left-[-39px] top-2 w-4 h-4 md:w-5 md:h-5 rounded-full border-4 border-accent bg-background z-10 transition-transform group-hover:scale-125 group-hover:shadow-lg group-hover:shadow-accent/20" />
                 <Card className="p-6 md:p-8 bg-card/50 border-border/50 hover-lift hover:border-primary/30 transition-all">
                   <div className="space-y-5">
                     <div className="flex flex-col md:flex-row md:items-start justify-between gap-2">
@@ -279,8 +278,8 @@ const Index: React.FC = () => {
               </AnimatedSection>
 
               {/* XcitEducation */}
-              <AnimatedSection delay={0.3} className="relative">
-                <div className="absolute left-[-30px] top-2 w-4 h-4 rounded-full border-4 border-primary bg-background z-10" />
+              <AnimatedSection delay={0.3} className="relative group">
+                <div className="absolute left-[-33px] md:left-[-39px] top-2 w-4 h-4 md:w-5 md:h-5 rounded-full border-4 border-muted-foreground bg-background z-10 transition-transform group-hover:scale-125" />
                 <Card className="p-6 md:p-8 bg-card/50 border-border/50 hover-lift hover:border-primary/30 transition-all">
                   <div className="space-y-5">
                     <div className="flex flex-col md:flex-row md:items-start justify-between gap-2">
@@ -316,14 +315,15 @@ const Index: React.FC = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="section-padding relative">
-        <div className="container-custom">
+      <section id="projects" className="py-20 md:py-24 relative">
+        <div className="container-custom px-4 sm:px-6">
           <AnimatedSection className="max-w-5xl mx-auto">
-            <div className="flex items-center gap-3 mb-12">
-              <div className="p-2 rounded-lg bg-primary/10">
-                <Code2 className="w-5 h-5 text-primary" />
+            <div className="flex flex-col items-center text-center mb-12">
+              <div className="p-3 rounded-xl bg-primary/10 mb-4">
+                <Code2 className="w-6 h-6 text-primary" />
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Featured Projects</h2>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">Featured Projects</h2>
+              <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full my-4"></div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -396,14 +396,15 @@ const Index: React.FC = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="section-padding relative bg-card/30">
-        <div className="container-custom">
+      <section id="skills" className="py-20 md:py-24 relative bg-card/30">
+        <div className="container-custom px-4 sm:px-6">
           <AnimatedSection className="max-w-5xl mx-auto">
-            <div className="flex items-center gap-3 mb-12">
-              <div className="p-2 rounded-lg bg-primary/10">
-                <Layers className="w-5 h-5 text-primary" />
+            <div className="flex flex-col items-center text-center mb-12">
+              <div className="p-3 rounded-xl bg-accent/10 mb-4">
+                <Layers className="w-6 h-6 text-accent" />
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Skills & Technologies</h2>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">Skills & Technologies</h2>
+              <div className="w-16 h-1 bg-gradient-to-r from-accent to-primary rounded-full my-4"></div>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -474,14 +475,15 @@ const Index: React.FC = () => {
       </section>
 
       {/* Blogs Section */}
-      <section id="blogs" className="section-padding relative">
-        <div className="container-custom">
+      <section id="blogs" className="py-20 md:py-24 relative">
+        <div className="container-custom px-4 sm:px-6">
           <AnimatedSection className="max-w-5xl mx-auto">
-            <div className="flex items-center gap-3 mb-12">
-              <div className="p-2 rounded-lg bg-primary/10">
-                <BookOpen className="w-5 h-5 text-primary" />
+            <div className="flex flex-col items-center text-center mb-12">
+              <div className="p-3 rounded-xl bg-primary/10 mb-4">
+                <BookOpen className="w-6 h-6 text-primary" />
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Tech Blogs</h2>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">Tech Blogs</h2>
+              <div className="w-16 h-1 bg-gradient-to-r from-primary to-accent rounded-full my-4"></div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -544,14 +546,15 @@ const Index: React.FC = () => {
       </section>
 
       {/* Achievements Section */}
-      <section id="achievements" className="section-padding relative bg-card/30">
-        <div className="container-custom">
+      <section id="achievements" className="py-20 md:py-24 relative bg-card/30">
+        <div className="container-custom px-4 sm:px-6">
           <AnimatedSection className="max-w-4xl mx-auto">
-            <div className="flex items-center gap-3 mb-12">
-              <div className="p-2 rounded-lg bg-primary/10">
-                <Award className="w-5 h-5 text-primary" />
+            <div className="flex flex-col items-center text-center mb-12">
+              <div className="p-3 rounded-xl bg-accent/10 mb-4">
+                <Award className="w-6 h-6 text-accent" />
               </div>
-              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Achievements</h2>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">Achievements</h2>
+              <div className="w-16 h-1 bg-gradient-to-r from-accent to-primary rounded-full my-4"></div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
