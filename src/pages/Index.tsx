@@ -26,12 +26,16 @@ import {
   Cloud,
   Layers
 } from "lucide-react";
+import { toast } from "@/hooks/use-toast";
 
 const Index: React.FC = () => {
-  // Placeholder function for blog post click handler
+  // Function to handle blog post clicks
   const handleBlogPostClick = (title: string) => {
-    // This would typically show a toast or navigate to the blog post
-    console.log(`Viewing blog post: ${title}`);
+    toast({
+      title: "Feature Under Development",
+      description: `${title} is coming soon! This feature is currently under development.`,
+      variant: "default",
+    });
   };
   return ( 
     <div className="min-h-screen bg-background relative">
