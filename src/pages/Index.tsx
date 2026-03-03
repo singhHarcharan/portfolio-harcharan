@@ -101,7 +101,7 @@ const Index: React.FC = () => {
               <Button 
                 size="lg" 
                 className="bg-gradient-primary hover:opacity-90 text-white glow-sm hover:glow transition-all px-8"
-                onClick={() => window.open('https://drive.google.com/file/d/1XfMSfZ7tCU3J49SmdskG413-ZclkKaAi/view?usp=drive_link', '_blank', 'noopener,noreferrer')}
+                onClick={() => window.open('https://drive.google.com/file/d/12OSjkVRRdMvyJeLYB7KUV3zcchfAqINx/view?usp=drive_link', '_blank', 'noopener,noreferrer')}
               >
                 View Resume
                 <ArrowRight className="ml-2 h-4 w-4" />
