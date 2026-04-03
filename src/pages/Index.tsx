@@ -199,6 +199,39 @@ const Index: React.FC = () => {
             <div className="relative pl-10 md:pl-12 space-y-12">
               <div className="absolute left-[7px] md:left-[9px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/20 via-primary/50 to-primary/20" />
 
+              {/* Alyne Group */}
+              <AnimatedSection delay={0.05} className="relative group">
+                <div className="absolute left-[-33px] md:left-[-39px] top-2 w-4 h-4 md:w-5 md:h-5 rounded-full border-4 border-blue-500 bg-background z-10 transition-transform group-hover:scale-125 group-hover:shadow-lg group-hover:shadow-blue-500/20" />
+                <Card className="p-6 md:p-8 bg-card/80 border-border/30 hover:border-primary/30 transition-all hover:shadow-lg">
+                  <div className="space-y-5">
+                    <div className="flex flex-col md:flex-row md:items-start justify-between gap-2">
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-semibold tracking-tight">AI Engineer</h3>
+                        <p className="text-base md:text-lg text-primary mt-1">Alyne Group</p>
+                      </div>
+                      <Badge variant="secondary" className="w-fit h-fit">March 2026 – Present</Badge>
+                    </div>
+                    
+                    <ul className="space-y-3 text-muted-foreground">
+                      <li className="flex items-start gap-3">
+                        <span className="text-primary mt-1 text-lg flex-shrink-0">›</span>
+                        <span>Built an <strong className="text-foreground">end-to-end AI-powered backend pipeline</strong> using Python, LangChain, and Claude to automate Upwork lead generation, job scraping, and proposal creation workflows.</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="text-primary mt-1 text-lg flex-shrink-0">›</span>
+                        <span>Integrated <strong className="text-foreground">Apify and Zoho</strong> (Sheets & WorkDrive) to enable real-time data syncing, intelligent proposal generation, and seamless task automation across the system.</span>
+                      </li>
+                    </ul>
+
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {['Python', 'LangChain', 'Claude', 'Apify', 'Zoho', 'Automation', 'AI Pipeline'].map(tech => (
+                        <Badge key={tech} variant="secondary" className="bg-blue-500/10 text-blue-500 border-0">{tech}</Badge>
+                      ))}
+                    </div>
+                  </div>
+                </Card>
+              </AnimatedSection>
+
               {/* Amdocs */}
               <AnimatedSection delay={0.1} className="relative group">
                 <div className="absolute left-[-33px] md:left-[-39px] top-2 w-4 h-4 md:w-5 md:h-5 rounded-full border-4 border-primary bg-background z-10 transition-transform group-hover:scale-125 group-hover:shadow-lg group-hover:shadow-primary/20" />
